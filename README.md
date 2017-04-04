@@ -5,3 +5,14 @@ Renders a Google Map in React based on [this Codepen](http://codepen.io/anon/pen
 I created this repo as an example of one way to render Google Maps into a Create React App environment. I found many examples of how to combine React + GMaps, but none which worked at a "drop in and go" level of simplicity which the CRA bootstrap provides for starting React apps.
 
 Google makes it easy for non-React environments: A single `<script>` tag and `<div id="map"></div>` and you're set - but this does work for React. Hopefully, this does :)
+
+
+## To use:
+Fork/clone/download/retype repo, however you want.
+
+ - Edit `public/index.html` and change line 7 to include your Google API key (Don't have one? [Get a Google Maps API key here](https://developers.google.com/maps/documentation/javascript/get-api-key))
+
+ - `npm start` to launch application.
+
+ - localhost:3000 should show you a map centered on Seattle, WA, with a pin and info window reading "I'm an info window!"
+ 
