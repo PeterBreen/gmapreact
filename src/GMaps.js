@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import './GMaps.css';
+import loadJS from './vendor/loadJS';
 
-class GMap extends Component {
+export const initialCenter = { lng: -90.1056957, lat: 29.9717272 }
+export class GMap extends Component {
   state = { zoom: 10 };
+
+  componentWillMount() {
+    loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyCZwgsigsvot5FGN3gdXa3gUOU5tjMDWzw');
+    console.log('componentWillMount probably ran loadJS');
+  }
 
 	render() {
     return <div className="GMap">
@@ -15,6 +22,7 @@ class GMap extends Component {
   }
 
   componentDidMount() {
+
     // create the map, marker and infoWindow after the component has
     // been rendered because we need to manipulate the DOM for Google =(
     this.map = this.createMap()
@@ -68,6 +76,3 @@ class GMap extends Component {
     })
   }
 }
-
-export default GMap
-export const initialCenter = { lng: -90.1056957, lat: 29.9717272 }
