@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './GMaps.css';
-import loadJS from './vendor/loadJS';
-var google, map
+// import loadJS from './vendor/loadJS';
+//these don't have any values; the page might render but the map won't work unless they are given values
 
 export const initialCenter = { lng: -90.1056957, lat: 29.9717272 }
 export class GMap extends Component {
@@ -9,6 +9,8 @@ export class GMap extends Component {
       super(props);
       this.state = { zoom: 10 };
     }
+
+
 	render() {
     return <div className="GMap">
       <div className='UpdatedText'>
@@ -20,9 +22,6 @@ export class GMap extends Component {
   }
 
   componentDidMount() {
-    loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyCZwgsigsvot5FGN3gdXa3gUOU5tjMDWzw&callback=createMap');
-    window.google = this.google;
-    window.map = this.map;
     // create the map, marker and infoWindow after the component has
     // been rendered because we need to manipulate the DOM for Google =(
     this.map = this.createMap()
