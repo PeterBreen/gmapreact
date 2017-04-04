@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import './GMaps.css';
 // import loadJS from './vendor/loadJS';
 //these don't have any values; the page might render but the map won't work unless they are given values
+let google, map
+if(!google) {
+  google = window.google;
+}
 
-export const initialCenter = { lng: -90.1056957, lat: 29.9717272 }
+export const initialCenter = { lng: -122.335167, lat: 47.608013 }
 export class GMap extends Component {
   constructor(props) {
       super(props);
@@ -62,7 +66,7 @@ export class GMap extends Component {
 	}
 
   createInfoWindow() {
-    let contentString = "<div class='InfoWindow'>I'm a Window that contains Info Yay</div>"
+    let contentString = "<div class='InfoWindow'>I'm an info window!</div>"
     return new google.maps.InfoWindow({
       map: this.map,
       anchor: this.marker,
