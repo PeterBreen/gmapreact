@@ -8,7 +8,7 @@ export class GMap extends Component {
 
   componentWillMount() {
     loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyCZwgsigsvot5FGN3gdXa3gUOU5tjMDWzw');
-    console.log('componentWillMount probably ran loadJS');
+    console.log('componentWillMount complete');
   }
 
 	render() {
@@ -32,6 +32,7 @@ export class GMap extends Component {
     // have to define google maps event listeners here too
     // because we can't add listeners on the map until its created
     google.maps.event.addListener(this.map, 'zoom_changed', ()=> this.handleZoomChange())
+    console.log('componentDidMount complete');
   }
 
   // clean up event listeners when component unmounts
