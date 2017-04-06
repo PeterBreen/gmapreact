@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import './GMaps.css';
-// import loadJS from './vendor/loadJS';
-//these don't have any values; the page might render but the map won't work unless they are given values
-let google, map
-if(!google) {
-  google = window.google;
-}
-
+//tell component google object is in global scope
+let google = window.google;
+let map;
+//export initialCenter for App.js to use
 export const initialCenter = { lng: -122.335167, lat: 47.608013 }
 export class GMap extends Component {
   constructor(props) {
@@ -14,12 +11,8 @@ export class GMap extends Component {
       this.state = { zoom: 10 };
     }
 
-
 	render() {
     return <div className="GMap">
-      <div className='UpdatedText'>
-        <p>Current Zoom: { this.state.zoom }</p>
-      </div>
       <div className='GMap-canvas' ref="mapCanvas">
       </div>
     </div>
@@ -35,7 +28,6 @@ export class GMap extends Component {
     // have to define google maps event listeners here too
     // because we can't add listeners on the map until its created
     google.maps.event.addListener(this.map, 'zoom_changed', ()=> this.handleZoomChange())
-    console.log('componentDidMount complete');
   }
 
   // clean up event listeners when component unmounts
