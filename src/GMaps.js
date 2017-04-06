@@ -3,7 +3,7 @@ import './GMaps.css';
 //tell component google object is in global scope
 let google = window.google;
 let map;
-
+//export initialCenter for App.js to use
 export const initialCenter = { lng: -122.335167, lat: 47.608013 }
 export class GMap extends Component {
   constructor(props) {
