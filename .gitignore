@@ -8,9 +8,7 @@
 
 # production
 /build
-
-# development
-googleapikey.js
+gMapAPI.js
 
 # misc
 .DS_Store
