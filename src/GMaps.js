@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import './GMaps.css';
-// import loadJS from './vendor/loadJS';
-//these don't have any values; the page might render but the map won't work unless they are given values
-let google, map
-if(!google) {
-  google = window.google;
-}
+//tell component google object is in global scope
+let google = window.google;
+let map;
 
 export const initialCenter = { lng: -122.335167, lat: 47.608013 }
 export class GMap extends Component {
@@ -17,9 +14,6 @@ export class GMap extends Component {
 
 	render() {
     return <div className="GMap">
-      <div className='UpdatedText'>
-        <p>Current Zoom: { this.state.zoom }</p>
-      </div>
       <div className='GMap-canvas' ref="mapCanvas">
       </div>
     </div>
