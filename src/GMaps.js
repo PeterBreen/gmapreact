@@ -11,7 +11,6 @@ export class GMap extends Component {
       this.state = { zoom: 10 };
     }
 
-
 	render() {
     return <div className="GMap">
       <div className='GMap-canvas' ref="mapCanvas">
@@ -29,7 +28,6 @@ export class GMap extends Component {
     // have to define google maps event listeners here too
     // because we can't add listeners on the map until its created
     google.maps.event.addListener(this.map, 'zoom_changed', ()=> this.handleZoomChange())
-    console.log('componentDidMount complete');
   }
 
   // clean up event listeners when component unmounts
