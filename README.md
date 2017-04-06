@@ -10,9 +10,9 @@ Google makes it easy for non-React environments: A single `<script>` tag and `<d
 ## To use:
 Fork/clone/download/retype repo, however you want.
 
- - Edit `public/index.html` and change line 7 to include your Google API key (Don't have one? [Get a Google Maps API key here](https://developers.google.com/maps/documentation/javascript/get-api-key))
+ - Edit `public/index.html` and change line 7 to include your Google Maps API key (Don't have one? [Get a Google Maps API key here](https://developers.google.com/maps/documentation/javascript/get-api-key))
 
  - `npm start` to launch application.
 
- - localhost:3000 should show you a map centered on Seattle, WA, with a pin and info window reading "I'm an info window!"
+ - By default, app will serve on `localhost:3000` and should display the Create React App logo and header with a Google Map centered on Seattle, WA showing a pin and info window.
  
