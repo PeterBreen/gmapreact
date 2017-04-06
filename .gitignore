@@ -8,7 +8,6 @@
 
 # production
 /build
-gMapAPI.js
 
 # misc
 .DS_Store
